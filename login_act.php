@@ -31,7 +31,8 @@ if ($val && password_verify($password, $val['password_hash'])) { // ハッシュ
     //Login成功時
     $_SESSION['chk_ssid']  = session_id();
     $_SESSION['admin_flg'] = $val['admin_flg'];
-    header('Location: index.php');
+    $_SESSION['user_id']   = $val['user_id'];
+    header('Location: welcome.php');
 } else {
     //Login失敗時(Logout経由)
     header('Location: login.php');

@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register_word'])) {
         $stmt->bindValue(':meaning', $meaning, PDO::PARAM_STR);
         $stmt->bindValue(':phrase', $phrase, PDO::PARAM_STR);
         if ($stmt->execute()) {
-            $message = "単語が登録されました。";
+            $message = "単語が登録されました★";
         } else {
             $message = "単語の登録に失敗しました。";
         }
@@ -83,7 +83,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register_word'])) {
 .src-btn:focus {
   outline: none;
 }
-
+.message{
+    background-color: white;
+    border-radius: 8px;
+    color:rgb(231, 36, 22);
+    padding: 10px;
+}
     </style>
     </head>
 
@@ -143,10 +148,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register_word'])) {
                 <p class="message"><?php echo htmlspecialchars($message, ENT_QUOTES, 'UTF-8'); ?></p>
             <?php endif; ?>
             
-            <div class="btn_03container">
-
-            
-            </div>
         </div>
     </div>
 
@@ -161,7 +162,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register_word'])) {
     <script type="module">
         import { GoogleGenerativeAI } from "@google/generative-ai";
 
-
+        const API_KEY = <?php echo json_encode($api_key); ?>;
+        const genAI = new GoogleGenerativeAI(API_KEY);
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
         let isSearching = false;
 
