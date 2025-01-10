@@ -1,0 +1,152 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  position: relative; /* 子要素の位置を基準にするため追加 */
+  overflow: hidden; /* 背景のはみ出しを防ぐ */
+  height: 100%;
+  width: 100%;
+  padding: 0;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 390px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #000;
+}
+
+h1 {
+  text-align: center;
+  margin: 10px 0;
+  margin-bottom: 25px;
+  font-size: 27px;
+  font-weight: bold;
+  color: black;
+}
+
+/* ボタンスタイル */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  background: linear-gradient(
+    60deg,
+    rgba(84, 58, 183, 1) 0%,
+    rgba(0, 172, 193, 1) 100%
+  ); /* 背景のグラデーション */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2); /* 影 */
+  transition: transform 0.2s, box-shadow 0.2s; /* ホバー時のアニメーション */
+}
+
+/* ホバー時の効果 */
+.button:hover {
+  transform: translateY(-3px); /* ボタンを少し浮かせる */
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.4), 0 3px 6px rgba(0, 0, 0, 0.3); /* 影を強調 */
+}
+
+/* クリック時の効果 */
+.button:active {
+  transform: translateY(0); /* ボタンを元の位置に戻す */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2); /* 通常の影 */
+}
+
+/* labelタブ用のスタイル */
+label {
+  text-align: center; /* テキストを中央揃え */
+  display: block; /* 中央揃えを確実にするためblockに変更 */
+  width: 100%; /* 必要に応じて幅を指定 */
+  color: black;
+}
+
+form {
+  text-align: center; /* フォーム内の要素を中央揃え */
+}
+
+.loginform {
+    display: flex; /* フレックスレイアウトを使用 */
+    flex-direction: column; /* 子要素を縦に並べる */
+    gap: 15px; /* 各要素の間隔を指定 */
+    width: 100%; /* 必要に応じてフォーム全体の幅を調整 */
+    max-width: 400px; /* 最大幅を指定 */
+    margin: 0 auto; /* フォーム全体を中央揃え */
+}
+
+input {
+  width: 100%; /* 入力欄の幅を調整（%やpxで指定可能） */
+  max-width: 400px; /* 最大幅を指定 */
+  padding: 15px; /* 内側の余白を増やして高さを調整 */
+  font-size: 16px; /* フォントサイズを大きくして見やすくする */
+  border: 1px solid #ccc; /* 枠線のスタイル */
+  border-radius: 5px; /* 角を少し丸くする */
+  box-sizing: border-box; /* パディングを含めた幅計算 */
+}
+
+/* モーダルウィンドウのスタイル */
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.modal-content button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.modal-content button:hover {
+  background-color: #45a049;
+}
+
+.error-message {
+  position: fixed; /* 画面に固定表示 */
+  top: 10%; /* 画面の上から10%の位置 */
+  left: 50%; /* 画面の中央 */
+  transform: translate(-50%, -50%); /* 中央に揃える */
+  color: #ff0000; /* テキストの色を赤に設定 */
+  background-color: #ffe6e6; /* 背景を薄い赤に設定 */
+  padding: 15px 20px; /* 内側の余白を調整 */
+  border-radius: 8px; /* 角を丸くする */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 影をつけて浮いているように見せる */
+  z-index: 1000; /* 他の要素の上に表示 */
+  border: 1px solid #ff0000; /* 赤い枠線 */
+  font-weight: bold; /* 太字 */
+  text-align: center; /* テキストを中央揃え */
+}

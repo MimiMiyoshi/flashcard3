@@ -1,0 +1,55 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  position: relative; /* 子要素の位置を基準にするため追加 */
+  overflow: hidden; /* 背景のはみ出しを防ぐ */
+  height: 100%;
+  width: 100%;
+  padding: 0;
+}
+
+
+#background {
+  position: fixed; /* 他の要素に影響を与えない */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    60deg,
+    rgba(84, 58, 183, 1) 0%,
+    rgba(0, 172, 193, 1) 100%
+  );
+  z-index: -1; /* 背景を後ろに配置 */
+  overflow: hidden;
+}
+
+
+
+/* ドットのスタイル */
+.dot {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(237, 197, 234, 0.973); /* 半透明のブルー */
+  animation: fall linear infinite; /* 落下アニメーション */
+}
+
+/* 落下アニメーション */
+@keyframes fall {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0; /* 初めは透明 */
+  }
+  10% {
+    opacity: 1; /* 少し経ってから表示 */
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0; /* 下まで行ったら消える */
+  }
+}
+
