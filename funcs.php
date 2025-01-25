@@ -9,10 +9,10 @@ function h($stg) {
 function db_conn() {
   try {
     // 外部サーバーの設定
-    $db_host = 'mysql3104.db.sakura.ne.jp'; 
-    $db_name = 'atuy-amour_gs_db_class';         
-    $db_user = 'atuy-amour_gs_db_class';              
-    $db_password = 'coco1231';
+    $db_host = '
+    $db_name = '       
+    $db_user = ';              
+    $db_password = ';
 
       //ID:'root', Password: xamppは 空白 ''
       $server_info = 'mysql:dbname=' . $db_name . ';charset=utf8;host=' . $db_host;
